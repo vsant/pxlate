@@ -1,0 +1,8 @@
+# pxlate .htaccess file
+# vsant
+
+# Prevent unauthorized browsing
+Options All -Indexes
+
+Options +ExecCGI
+AddHandler cgi-script cgi
