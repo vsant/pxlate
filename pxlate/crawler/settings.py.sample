@@ -1,0 +1,8 @@
+# 
+# Copyright (C) 2009 Pxlate
+# Author: Vivek Sant
+# Obtain your own API key and replace
+# 
+
+# Google ajax image search API token
+API_KEY = "REPLACE_THIS"

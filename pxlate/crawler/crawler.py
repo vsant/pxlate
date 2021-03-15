@@ -14,6 +14,7 @@ from os import popen, remove
 from os.path import getsize
 from daemon import Daemon
 import logging
+from settings import *
 
 input_text = "list.txt"
 LOG_FILENAME = '/var/log/pxlate/crawler-stats.log'
@@ -27,12 +28,12 @@ def fetchResults(q, s, e):
   # Construct the url
   urlbase = "http://ajax.googleapis.com/ajax/services/search/images?"
   ver = "v=1.0"
-  key = "&key=ABQIAAAAlYqEP_X22RUKFRm-C4YUFBSCoHY_7XMETHhmJaIbbzBvw8Ud2hQX9YJmGWe8A8rEU0j70MmC0Z0kVQ"
+  key = "&key="
   rsz = "&rsz=large"                 #large=8 resuls, small=4
   start = "&start=%d" % s
   safe = "&safe=active"              #active, moderate, off
   query = urllib.urlencode({'q' : q})
-  url = urlbase + ver + key + rsz + start + safe + "&" + query
+  url = urlbase + ver + key + API_KEY + rsz + start + safe + "&" + query
   
   # Make the query
   search_results = urllib.urlopen(url)
